@@ -1,0 +1,46 @@
+{
+  "canisters": {
+    "yasuo": {
+      "main": "canisters/ft/dip20.mo",
+      "type": "motoko"
+    },
+    "zed": {
+      "main": "canisters/ft/dip20.mo",
+      "type": "motoko"
+    },
+    "defi": {
+      "main": "canisters/services/defi.mo",
+      "type": "motoko"
+    },
+    "assets": {
+      "dependencies": [
+        "defi"
+      ],
+      "frontend": {
+        "entrypoint": "dist/index.html"
+      },
+      "source": [
+        "dist/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    },
+    "ic": {
+      "providers": [
+        "https://mainnet.dfinity.network"
+      ],
+      "type": "persistent"
+    }
+  },
+  "version": 1
+}
